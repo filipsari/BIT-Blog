@@ -1,13 +1,14 @@
-
 import React, {Fragment} from "react"
-import './App.css';
+import { Switch, Route, Redirect } from 'react-router-dom';
+
+
 import {Header} from "./Header/Header";
 import {Footer} from "./Footer/Footer";
 import {BlogList} from './BlogList/BlogList';
-
-
-
-
+import {Author} from './Author/Author';
+import {notFound} from '../entities/entities';
+import {About} from './About/About';
+import './App.css';
 
 
 
@@ -16,7 +17,20 @@ function App() {
     <Fragment> 
 
       <Header/>
-      <BlogList/>
+
+      <Switch> 
+        <Route exact path='/' component={BlogList}/> 
+        <Route       path='/author' component={Author}/> 
+        {<Route       path='/not-found' component={notFound}/>}
+        {<Route       path='/about' component={About}/>}
+        { <Redirect    from='/' to='/not-found'  /> }
+     </Switch>
+
+    
+
+
+
+     
       <Footer/> 
       
       </Fragment>
