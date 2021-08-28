@@ -1,5 +1,6 @@
 
 import React from "react";
+import { Link } from "react-router-dom";
 import './Header.css';
 
 
@@ -10,9 +11,11 @@ return (
   <div className="nav-wrapper">
     <a href="#" className="brand-logo">BIT BLOG</a>
     <ul id="nav-mobile" className="right hide-on-med-and-down">
-      <li><a href="sass.html">Home</a></li>
-      <li><a href="badges.html">Authors</a></li>
-      <li><a href="collapsible.html">About</a></li>
+      <li> <Link to="/">Home </Link></li>
+      <li> <Link to="/author">Authors </Link></li>
+      <li> <Link to="/about">About </Link></li>
+
+  
     </ul>
   </div>
 </nav>
