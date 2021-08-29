@@ -1,33 +1,43 @@
 
 
 
-import React from "react";
+import React, { Component } from "react";
 import './BlogList.css';
 import {getData} from '../../services/services'; 
 import {useState, useEffect} from 'react'
 
+export class BlogList extends Component {
+    constructor(props) {
+      super(props)
+      this.state = {
+        blogs = []
+      }
+    }
+
+componentDidMount(){
+  getData()
+  .then(blogs => {
+    this.setState({blogs})
+  })
+}
 
 
-export const BlogList = () => {
-  const [posts, setPost] = useState([])
+    render () {
 
-  useEffect( () => {
-    getData().then(posts => {
-      setPost (posts);
-     })
-  }, [] )
-return (
+      return (
+          <div>
+          {this.state.blogs.map( (element) => {
+            <div> 
+              <h3>{element.title}</h3>
+              <p>{element.body}</p>
+            </div>
+          })
+          }
+          </div>
+      )
+    }
 
-  <div>  
-
-  {posts.map( (element) => {
-    <div>  
-     <h1> {element.title}</h1>
-     <p> {element.body} </p>   
-</div>
-  })}
-  </div>
-
+}
 
 
 
@@ -51,5 +61,5 @@ return (
 
 //  </div>
 
-)
-};
+// )
+// };
