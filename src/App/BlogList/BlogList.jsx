@@ -4,13 +4,13 @@
 import React, { Component } from "react";
 import './BlogList.css';
 import {getData} from '../../services/services'; 
-import {useState, useEffect} from 'react'
+// import {useState, useEffect} from 'react'
 
 export class BlogList extends Component {
     constructor(props) {
       super(props)
       this.state = {
-        blogs = []
+        blogs: []
       }
     }
 
@@ -23,13 +23,14 @@ componentDidMount(){
 
 
     render () {
-
+   
       return (
           <div>
           {this.state.blogs.map( (element) => {
             <div> 
               <h3>{element.title}</h3>
               <p>{element.body}</p>
+              <p>hellolo</p>
             </div>
           })
           }
