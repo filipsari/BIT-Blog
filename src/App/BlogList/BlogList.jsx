@@ -4,15 +4,17 @@
 import React, { Component } from "react";
 import './BlogList.css';
 import {getData} from '../../services/services'; 
-import {useState, useEffect} from 'react'
+// import {useState, useEffect} from 'react'
 
 export class BlogList extends Component {
     constructor(props) {
       super(props)
       this.state = {
-        blogs = []
+        blogs: []
       }
     }
+
+
 
 componentDidMount(){
   getData()
@@ -25,12 +27,15 @@ componentDidMount(){
     render () {
 
       return (
-          <div>
+          <div className="post-container">
+            <h2>POSTS</h2>
           {this.state.blogs.map( (element) => {
-            <div> 
+           return ( 
+              <div> 
+                
               <h3>{element.title}</h3>
               <p>{element.body}</p>
-            </div>
+            </div>)
           })
           }
           </div>
