@@ -25,7 +25,7 @@ componentDidMount(){
 
 
     render () {
-
+   
       return (
           <div className="post-container">
             <h2>POSTS</h2>
@@ -35,7 +35,12 @@ componentDidMount(){
                 
               <h3>{element.title}</h3>
               <p>{element.body}</p>
+<<<<<<< HEAD
             </div>)
+=======
+              <p>hellolo</p>
+            </div>
+>>>>>>> a2f2a05d18435ef88d80c6720e0f6b1c68447af5
           })
           }
           </div>
