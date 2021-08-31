@@ -14,6 +14,8 @@ export class BlogList extends Component {
       }
     }
 
+
+
 componentDidMount(){
   getData()
   .then(blogs => {
@@ -25,13 +27,15 @@ componentDidMount(){
     render () {
    
       return (
-          <div>
+          <div className="post-container">
+            <h2>POSTS</h2>
           {this.state.blogs.map( (element) => {
-            <div> 
+           return ( 
+              <div> 
+                
               <h3>{element.title}</h3>
               <p>{element.body}</p>
-              <p>hellolo</p>
-            </div>
+            </div>)
           })
           }
           </div>

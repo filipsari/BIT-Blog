@@ -6,7 +6,7 @@ export const getData = () => {
     return fetch(endPoint)
     .then((result) => result.json())
     .then((blogs) => {
-        return blogs;
+        return blogs.slice(0,7);
     });
 };
 
