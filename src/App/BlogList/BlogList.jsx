@@ -2,6 +2,7 @@ import React  from "react";
 import './BlogList.css';
 import {getData} from '../../services/services'; 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import {useState, useEffect} from 'react'
 import {Blog} from '../Blog/Blog'
 
@@ -27,6 +28,8 @@ export const BlogList = () => {
             <Blog post={post} key={userId}/>
           ))}
 =======
+=======
+>>>>>>> 7e94171c8344df92134aaeeff5e0b308a6ba1a7e
 // import {useState, useEffect} from 'react'
 
 export class BlogList extends Component {

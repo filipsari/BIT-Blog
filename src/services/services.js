@@ -11,6 +11,9 @@ export const getData = () => {
 =======
     .then((blogs) => {
         return blogs.slice(0,7);
+<<<<<<< HEAD
+>>>>>>> 7e94171c8344df92134aaeeff5e0b308a6ba1a7e
+=======
 >>>>>>> 7e94171c8344df92134aaeeff5e0b308a6ba1a7e
     });
 };
