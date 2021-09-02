@@ -26,8 +26,8 @@ return (
        <h1>AUTHORS({users.length})</h1>
     
        {users.map( (element , userId) => (
-            <Link to='/user'>
-            <p key={userId}>{element.name} {element.users/{userId}}</p>
+            <Link to={`/author/${props.author.id}`}>
+            <p key={userId}>{element.name} </p>
             </Link>
           ))}
 
