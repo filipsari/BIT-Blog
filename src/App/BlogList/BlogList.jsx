@@ -1,8 +1,9 @@
 import React from "react";
-import "./BlogList.css";
 import { getData } from "../../services/services";
 import { useState, useEffect } from "react";
 import { Blog } from "../Blog/Blog";
+
+import "./BlogList.css";
 
 export const BlogList = () => {
   const [posts, setPosts] = useState([]);

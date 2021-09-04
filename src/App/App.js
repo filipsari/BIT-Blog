@@ -7,7 +7,7 @@ import { BlogList } from "./BlogList/BlogList";
 import { Author } from "./Author/Author";
 import { notFound } from "../entities/entities";
 import { About } from "./About/About";
-// import { User } from "./User/User";
+import { SingleBlog } from "../App/SingleBlog/SingleBlog";
 import "./App.css";
 
 function App() {
@@ -19,6 +19,7 @@ function App() {
         <Route exact path="/" component={BlogList} />
         <Route path="/author" component={Author} />
         <Route path="/users/:userId" component={Author} />
+        <Route path="/posts/:id" component={SingleBlog} />
         <Route path="/not-found" component={notFound} />
         <Route path="/about" component={About} />
         <Redirect from="/" to="/not-found" />
