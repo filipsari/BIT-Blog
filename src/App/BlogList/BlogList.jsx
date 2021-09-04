@@ -1,42 +1,33 @@
-
-
-
-import React, { Component } from "react";
+import React  from "react";
 import './BlogList.css';
 import {getData} from '../../services/services'; 
-// import {useState, useEffect} from 'react'
+import {useState, useEffect} from 'react'
+import {Blog} from '../Blog/Blog'
 
-export class BlogList extends Component {
-    constructor(props) {
-      super(props)
-      this.state = {
-        blogs: []
-      }
-    }
+export const BlogList = () => {
+  
 
-componentDidMount(){
-  getData()
-  .then(blogs => {
-    this.setState({blogs})
-  })
-}
+    const [posts, setPosts] = useState([]);
+  
+    useEffect(() => {
+      getData().then((posts) => {
+        setPosts(posts);
+      });
+    }, []);
 
 
-    render () {
-   
+
+    
+
       return (
-          <div>
-          {this.state.blogs.map( (element) => {
-            <div> 
-              <h3>{element.title}</h3>
-              <p>{element.body}</p>
-              <p>hellolo</p>
-            </div>
-          })
-          }
+          <div className="blogList">
+            <h1>POSTS</h1>
+          {posts.map( (post, userId) => (
+            <Blog post={post} key={userId}/>
+          ))}
           </div>
-      )
-    }
+      );
+  
 
 }
 

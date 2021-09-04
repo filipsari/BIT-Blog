@@ -9,7 +9,7 @@ export const Header = () => {
 return (
   <nav>
   <div className="nav-wrapper">
-    <a href="#" className="brand-logo">BIT BLOG</a>
+    <a href="../BlogList/BlogList.jsx" className="brand-logo">BIT BLOG</a>
     <ul id="nav-mobile" className="right hide-on-med-and-down">
       <li> <Link to="/">Home </Link></li>
       <li> <Link to="/author">Authors </Link></li>

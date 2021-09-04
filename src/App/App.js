@@ -8,6 +8,7 @@ import {BlogList} from './BlogList/BlogList';
 import {Author} from './Author/Author';
 import {notFound} from '../entities/entities';
 import {About} from './About/About';
+import {User} from './User/User';
 import './App.css';
 
 
@@ -21,6 +22,7 @@ function App() {
       <Switch> 
         <Route exact path='/' component={BlogList}/> 
         <Route       path='/author' component={Author}/> 
+        <Route       path='/users/:userId' component={User}/>
         {<Route       path='/not-found' component={notFound}/>}
         {<Route       path='/about' component={About}/>}
         { <Redirect    from='/' to='/not-found'  /> }
