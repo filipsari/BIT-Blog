@@ -1,16 +1,13 @@
 import React from "react";
 
-import {useState, useEffect} from 'react'
-import {getAuthors} from '../../services/services'
-import {Link} from 'react-router-dom'
+import { useState, useEffect } from "react";
+import { getAuthors } from "../../services/services";
+import { Link } from "react-router-dom";
 
-import './Author.css';
+import "./Author.css";
 
-
-
-export const Author = () => {
-
-  const [users,setUsers] = useState([]);
+export const Author = (props) => {
+  const [users, setUsers] = useState([]);
 
   useEffect(() => {
     getAuthors().then((users) => {
@@ -18,21 +15,15 @@ export const Author = () => {
     });
   }, []);
 
-  
+  return (
+    <div className="author-container">
+      <h1>AUTHORS({users.length})</h1>
 
-
-return (
-<div className="author-container">
-       <h1>AUTHORS({users.length})</h1>
-    
-       {users.map( (element , userId) => (
-            <Link to={`/author/${props.author.id}`}>
-            <p key={userId}>{element.name} </p>
-            </Link>
-          ))}
-
-
-
-</div>
-)
+      {users.map((element, userId) => (
+        <Link to={`/author/${props.author.id}`}>
+          <p key={userId}>{element.name} </p>
+        </Link>
+      ))}
+    </div>
+  );
 };
